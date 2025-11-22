@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADEG V2.0 | Autonomous Digital Ecosystem Guardian</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="scanline-overlay"></div>
+    <div class="vignette-overlay"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-hexagon">
+                    <span>⚛️</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-item active" data-target="dashboard">
+                    <span class="icon">📊</span>
+                    <span class="label">OVERVIEW</span>
+                </div>
+                <div class="nav-item" data-target="perception">
+                    <span class="icon">👁️</span>
+                    <span class="label">PERCEPTION</span>
+                </div>
+                <div class="nav-item" data-target="reasoning">
+                    <span class="icon">🧠</span>
+                    <span class="label">REASONING</span>
+                </div>
+                <div class="nav-item" data-target="action">
+                    <span class="icon">⚡</span>
+                    <span class="label">ACTION</span>
+                </div>
+                <div class="nav-item" data-target="settings">
+                    <span class="icon">⚙️</span>
+                    <span class="label">SYSTEM</span>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">AD</div>
+                    <div class="user-info">
+                        <span class="name">ADMIN</span>
+                        <span class="role">ROOT ACCESS</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header HUD -->
+            <header class="top-hud">
+                <div class="hud-section left">
+                    <h1 class="page-title">SYSTEM DASHBOARD <span class="highlight">V2.0</span></h1>
+                    <div class="breadcrumb">HOME / OVERVIEW</div>
+                </div>
+                <div class="hud-section center">
+                    <div class="global-status">
+                        <span class="label">SYSTEM INTEGRITY</span>
+                        <div class="integrity-bar">
+                            <div class="integrity-fill" style="width: 98%;"></div>
+                        </div>
+                        <span class="value">98.4%</span>
+                    </div>
+                </div>
+                <div class="hud-section right">
+                    <div class="metric">
+                        <span class="label">LATENCY</span>
+                        <span class="value">12ms</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">UPTIME</span>
+                        <span class="value">42:10:05</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">ACTIVE AGENTS</span>
+                        <span class="value">4/4</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+
+                <!-- Perception Module -->
+                <div class="module-card perception large">
+                    <div class="module-header">
+                        <div class="header-title">
+                            <span class="icon">👁️</span>
+                            <h2>QUANTUM PERCEPTION FIELD</h2>
+                        </div>
+                        <div class="header-controls">
+                            <span class="status-dot active"></span>
+                            <span class="status-text">MONITORING</span>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="visualizer-container">
+                            <canvas id="quantumCanvas"></canvas>
+                            <div class="overlay-stats">
+                                <div class="stat-row">
+                                    <span>DECOHERENCE</span>
+                                    <span id="decoherence-val" class="dynamic-val">0.000%</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span>ENTROPY</span>
+                                    <span id="entropy-val" class="dynamic-val">LOW</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="agent-status-list">
+                            <div class="agent-row">
+                                <span class="agent-id">AGT-01</span>
+                                <span class="agent-name">Accessibility Sentinel</span>
+                                <span class="agent-state success">WCAG 2.1 AAA</span>
+                            </div>
+                            <div class="agent-row">
+                                <span class="agent-id">AGT-02</span>
+                                <span class="agent-name">Inclusivity Scanner</span>
+                                <span class="agent-state warning">ANALYZING</span>
+                            </div>
+                            <div class="agent-row">
+                                <span class="agent-id">AGT-03</span>
+                                <span class="agent-name">Quantum Noise Listener</span>
+                                <span class="agent-state success">ACTIVE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reasoning Module -->
+                <div class="module-card reasoning">
+                    <div class="module-header">
+                        <div class="header-title">
+                            <span class="icon">🧠</span>
+                            <h2>COGNITIVE INTENT PARSER</h2>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="intent-interface">
+                            <div class="input-wrapper">
+                                <textarea id="intent-input"
+                                    placeholder=">> Enter natural language command or mathematical model..."></textarea>
+                                <div class="input-footer">
+                                    <span class="char-count">0/1024</span>
+                                    <button id="synthesize-btn" class="cyber-btn">
+                                        <span class="btn-text">INITIALIZE SYNTHESIS</span>
+                                        <span class="btn-glitch"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="thought-process" id="thought-stream">
+                                <div class="placeholder-text">Waiting for input stream...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Module -->
+                <div class="module-card action">
+                    <div class="module-header">
+                        <div class="header-title">
+                            <span class="icon">⚡</span>
+                            <h2>AUTONOMOUS EXECUTION</h2>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="action-monitor">
+                            <div class="pipeline-step">
+                                <div class="step-icon">📝</div>
+                                <div class="step-info">
+                                    <span class="step-name">Code Generation</span>
+                                    <span class="step-status" id="status-gen">IDLE</span>
+                                </div>
+                            </div>
+                            <div class="pipeline-connector"></div>
+                            <div class="pipeline-step">
+                                <div class="step-icon">️</div>
+                                <div class="step-info">
+                                    <span class="step-name">Sandbox Validation</span>
+                                    <span class="step-status" id="status-val">IDLE</span>
+                                </div>
+                                <div class="mini-progress">
+                                    <div class="bar" id="validation-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="pipeline-connector"></div>
+                            <div class="pipeline-step">
+                                <div class="step-icon">🚀</div>
+                                <div class="step-info">
+                                    <span class="step-name">Deployment</span>
+                                    <span class="step-status" id="status-dep">IDLE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dependency-watch">
+                            <h3>SUPPLY CHAIN SENTINEL</h3>
+                            <div class="dep-grid">
+                                <div class="dep-item secure">
+                                    <span class="pkg">react</span>
+                                    <span class="ver">v18.2.0</span>
+                                </div>
+                                <div class="dep-item secure">
+                                    <span class="pkg">vite</span>
+                                    <span class="ver">v4.4.0</span>
+                                </div>
+                                <div class="dep-item warning">
+                                    <span class="pkg">lodash</span>
+                                    <span class="ver">v4.17.15</span>
+                                    <span class="badge">UPGRADING</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terminal Footer -->
+                <div class="module-card terminal-module full-width">
+                    <div class="module-header small">
+                        <div class="header-title">
+                            <span class="icon">💻</span>
+                            <h2>SYSTEM LOGS // ROOT</h2>
+                        </div>
+                        <div class="header-controls">
+                            <button class="icon-btn clear-logs">🗑️</button>
+                            <button class="icon-btn maximize-logs">⛶</button>
+                        </div>
+                    </div>
+                    <div class="terminal-content" id="terminal-output">
+                        <!-- Logs injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
