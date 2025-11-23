@@ -24,7 +24,7 @@ ADEG operates through three autonomous layers:
 ---
 ## 🎥 Demo
 ### Video Walkthrough
-**[▶️ Watch the Full Demo (4 min)](YOUR_VIDEO_LINK_HERE)**
+**[▶️ Watch the Full Demo (6 min)](https://youtu.be/0HAZwPgEF9o)**
 ### Live Dashboard
 ```bash
 python -m http.server 8000 --directory adeg_system/web
@@ -143,8 +143,7 @@ ADEG makes accessibility automatic, not optional:
 Impact: Making the web accessible to everyone, automatically and at scale.
 
 📊 Presentation
-View our pitch deck:
-
+View our pitch deck: https://1drv.ms/p/c/C992846CFED1E63A/EcQCTBqqe3hJrknslN2gt_UB3S538DuefZbxOT9FwZ6EuA?e=TdSSvY
 
 PowerPoint ADGE V2.0.pptx
 
@@ -242,10 +241,10 @@ Live Demo: http://localhost:8000
 Video Walkthrough: 
 
 YouTube Link
-Presentation: 
+Presentation: https://youtu.be/0HAZwPgEF9o
 
 View Slides
-Hackathon Submission: ADGE V2.0.pptx
+Hackathon Submission: https://1drv.ms/p/c/C992846CFED1E63A/EcQCTBqqe3hJrknslN2gt_UB3S538DuefZbxOT9FwZ6EuA?e=TdSSvY / ADGE V2.0.pptx
 
 Devpost Link
 💡 "We're not just building tools. We're building digital organisms."
